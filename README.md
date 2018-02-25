@@ -9,23 +9,25 @@ to be used as a filesystem in laravel 5.
 
 ## Installation
 
-    academe/laravel-azure-file-storage-driver
+    composer require academe/laravel-azure-file-storage-driver
 
 ## Usage
 
 If you're on Laravel 5.4 or earlier, add the service provider in your `config/app.php`:
 
+```php
 'providers' => [
     ...
     Academe\Laravel\AzureFileStorageDriver\ServiceProvider::class,
     ...
 ],
+```
 
 For Laravel 5.5+ this step is not necessary.
 
 ## Configuration
 
-Add the following to `config/filesystems.php`:
+Add the following to your `config/filesystems.php`:
 
 ```php
 [
@@ -50,7 +52,7 @@ Add the following to `config/filesystems.php`:
             'disableRecursiveDelete' => false,
             'driverOptions' => [],
         ],
-    ]
+    ],
 ];
 ```
 
