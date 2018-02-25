@@ -1,0 +1,18 @@
+language: php
+
+php:
+    - 7.0
+    - 7.1
+
+env:
+    global:
+        - secure: 
+
+before_install:
+    - travis_retry composer self-update
+
+install:
+    - travis_retry composer install --no-interaction --prefer-dist
+
+script:
+    - php vendor/bin/phpunit

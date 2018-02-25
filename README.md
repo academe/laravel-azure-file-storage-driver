@@ -1,12 +1,31 @@
-# Azure File Storage Filesystem Driver for Laravel 5
 
-Still under development, but fundtional.
+[![GitHub issues](https://img.shields.io/github/issues/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/issues)
+[![GitHub license](https://img.shields.io/github/license/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/blob/master/LICENCE)
+
+# Microsoft Azure File Storage Filesystem Driver for Laravel 5
+
+This package allows Microsoft Azure File Storage
+to be used as a filesystem in laravel 5.
 
 ## Installation
 
-TODO: Laravel 5.5+ and earlier versions.
+    academe/laravel-azure-file-storage-driver
 
-## Configuration in `config/filesystems.php`:
+## Usage
+
+If you're on Laravel 5.4 or earlier, add the service provider in your `config/app.php`:
+
+'providers' => [
+    ...
+    Academe\Laravel\AzureFileStorageDriver\ServiceProvider::class,
+    ...
+],
+
+For Laravel 5.5+ this step is not necessary.
+
+## Configuration
+
+Add the following to `config/filesystems.php`:
 
 ```php
 [
@@ -35,6 +54,12 @@ TODO: Laravel 5.5+ and earlier versions.
 ];
 ```
 
+If you want to use multiple Azure file storage shares, then create additional
+entries in the `disks` array with the appropriate settings for each share.
+
+An example list of environment variable entries can be found in `.env.example`.
+You can add that to your `.env` file and add your credentials there.
+
 ## Usage
 
 See [the Laravel documentation](https://laravel.com/docs/5.5/filesystem)
@@ -47,6 +72,7 @@ use Storage;
 // List all files recursively from the root of the Azure share:
 
 $files = Storage::disk('azure-file-storage')->listAll();
+dump($files);
 
 // Example:
 // array:25 [▼
