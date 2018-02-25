@@ -1,0 +1,46 @@
+{
+    "name": "academe/laravel-azure-file-storage-driver",
+    "description": "Azure File Storage filesystem driver for Laravel.",
+    "homepage": "https://github.com/academe",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jason Judge",
+            "email": "jason@academe.co.uk"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/academe/laravel-azure-file-storage-driver/issues"
+    },
+    "keywords": [
+        "laravel",
+        "driver",
+        "azure",
+        "file storage"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Academe\\Laravel\\AzureFileStorageDriver\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Academe\\Laravel\\AzureFileStorageDriver\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "consilience/flysystem-azure-file-storage": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0|^7.0",
+        "orchestra/testbench": "~3.3|~3.4|~3.5|~3.6"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Academe\\Laravel\\AzureFileStorageDriver\\ServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+.idea
+vendor
+composer.lock
+bin
+coverage
+coverage.xml
+composer.lock
