@@ -1,3 +1,10 @@
+# Azure File Storage Filesystem Driver for Laravel 5
+
+Still under development, but fundtional.
+
+## Installation
+
+TODO: Laravel 5.5+ and earlier versions.
 
 ## Configuration in `config/filesystems.php`:
 
@@ -6,9 +13,9 @@
     ...
     'disks' => [
         ...
-        // Call this disk what you like.
+        // Name this disk for your application to reference.
         'azure-file-storage' => [
-            // This driver.
+            // The driver provided by this package.
             'driver' => 'azure-file-storage',
 
             // Account credentials.
@@ -18,7 +25,7 @@
             // The file share.
             // This driver supports one file share at a time (you cannot
             // copy or move files between shares natively).
-            'fileShareName' => env('AZURE_FLE_STORAGE_HARE_NAME'),
+            'fileShareName' => env('AZURE_FLE_STORAGE_SHARE_NAME'),
 
             // Optional settings
             'disableRecursiveDelete' => false,

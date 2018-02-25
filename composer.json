@@ -1,6 +1,6 @@
 {
     "name": "academe/laravel-azure-file-storage-driver",
-    "description": "Azure File Storage filesystem driver for Laravel.",
+    "description": "Azure File Storage filesystem driver for Laravel",
     "homepage": "https://github.com/academe",
     "license": "MIT",
     "authors": [
