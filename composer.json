@@ -30,7 +30,7 @@
     },
     "require": {
         "php": ">=7.0",
-        "consilience/flysystem-azure-file-storage": "^0.1.0"
+        "consilience/flysystem-azure-file-storage": "^0.1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0|^7.0",
