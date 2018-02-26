@@ -1,6 +1,9 @@
 
-[![GitHub issues](https://img.shields.io/github/issues/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/issues)
+[![Latest Stable Version](https://poser.pugx.org/academe/laravel-azure-file-storage-driver/v/stable)](https://packagist.org/packages/academe/laravel-azure-file-storage-driver)
+[![Total Downloads](https://poser.pugx.org/academe/laravel-azure-file-storage-driver/downloads)](https://packagist.org/packages/academe/laravel-azure-file-storage-driver)
+[![Latest Unstable Version](https://poser.pugx.org/academe/laravel-azure-file-storage-driver/v/unstable)](https://packagist.org/packages/academe/laravel-azure-file-storage-driver)
 [![GitHub license](https://img.shields.io/github/license/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/blob/master/LICENCE)
+[![GitHub issues](https://img.shields.io/github/issues/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/issues)
 
 # Microsoft Azure File Storage Filesystem Driver for Laravel 5
 
@@ -24,6 +27,7 @@ If you're on Laravel 5.4 or earlier, add the service provider in your `config/ap
 ```
 
 For Laravel 5.5+ this step is not necessary.
+This package just extends the filesystem driver, and provides no additional services.
 
 ## Configuration
 
@@ -83,4 +87,9 @@ dump($files);
 //   2 => "foo/dee/dar/bigfile.txt"
 // ]
 ```
+
+## Testing
+
+PHPunit tests will work against any file storage share given
+criteria set in `.env` based on `.env.example`.
 

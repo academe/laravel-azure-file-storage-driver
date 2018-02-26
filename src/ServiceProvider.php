@@ -11,9 +11,9 @@ use League\Flysystem\Filesystem;
 
 use Consilience\Flysystem\Azure\AzureFileAdapter;
 use MicrosoftAzure\Storage\File\FileRestProxy;
-use Illuminate\Support\ServiceProvider as ServiceProviderContract;
+use Illuminate\Support\ServiceProvider as AbstractServiceProvider;
 
-class ServiceProvider extends ServiceProviderContract
+class ServiceProvider extends AbstractServiceProvider
 {
     /**
      * @var string The name of the driver.
@@ -65,6 +65,6 @@ class ServiceProvider extends ServiceProviderContract
      */
     public function register()
     {
-        //
+        // No services to register.
     }
 }
