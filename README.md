@@ -44,13 +44,13 @@ Add the following to your `config/filesystems.php`:
             'driver' => 'azure-file-storage',
 
             // Account credentials.
-            'storageAccount' => env('AZURE_FLE_STORAGE_ACCOUNT'),
-            'storageAccessKey' => env('AZURE_FLE_STORAGE_ACCESS_KEY'),
+            'storageAccount' => env('AZURE_FILE_STORAGE_ACCOUNT'),
+            'storageAccessKey' => env('AZURE_FILE_STORAGE_ACCESS_KEY'),
 
             // The file share.
             // This driver supports one file share at a time (you cannot
             // copy or move files between shares natively).
-            'fileShareName' => env('AZURE_FLE_STORAGE_SHARE_NAME'),
+            'fileShareName' => env('AZURE_FILE_STORAGE_SHARE_NAME'),
 
             // Optional settings
             'disableRecursiveDelete' => false,

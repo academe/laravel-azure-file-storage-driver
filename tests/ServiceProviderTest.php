@@ -50,9 +50,9 @@ class ServiceProviderTest extends TestCase
 
         $app['config']->set('filesystems.disks.azure-files', [
             'driver' => ServiceProvider::DRIVER_NAME,
-            'storageAccount' => env('AZURE_FLE_STORAGE_ACCOUNT'),
-            'storageAccessKey' => env('AZURE_FLE_STORAGE_ACCESS_KEY'),
-            'fileShareName' => env('AZURE_FLE_STORAGE_SHARE_NAME'),
+            'storageAccount' => env('AZURE_FILE_STORAGE_ACCOUNT'),
+            'storageAccessKey' => env('AZURE_FILE_STORAGE_ACCESS_KEY'),
+            'fileShareName' => env('AZURE_FILE_STORAGE_SHARE_NAME'),
             'disableRecursiveDelete' => false,
             'driverOptions' => [],
         ]);
