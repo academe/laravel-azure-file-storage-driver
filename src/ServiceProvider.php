@@ -46,15 +46,29 @@ class ServiceProvider extends AbstractServiceProvider
                 [] // $optionsWithMiddlewares
             );
 
-            $driverOptions = !empty($config['driverOptions'])
-                ? $config['driverOptions']
-                : null;
+            $directoryPrefix = null;
+
+            if (! empty($config['driverOptions'])) {
+                // If a string, then treat it like a prefix for legacy support.
+
+                if (is_string($config['driverOptions'])) {
+                    $directoryPrefix = $config['driverOptions'];
+                }
+
+                if (is_array($config['driverOptions'])) {
+                    $driverConfig = array_merge($driverConfig, $config['driverOptions']);
+                }
+            }
+
+            if (! empty($config['root']) && is_string($config['root'])) {
+                $directoryPrefix = $config['root'];
+            }
 
             return new Filesystem(
                 new AzureFileAdapter(
                     $fileService,
                     $driverConfig,
-                    $driverOptions
+                    $directoryPrefix
                 )
             );
         });

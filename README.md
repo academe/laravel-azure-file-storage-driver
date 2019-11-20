@@ -5,10 +5,10 @@
 [![GitHub license](https://img.shields.io/github/license/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/blob/master/LICENCE)
 [![GitHub issues](https://img.shields.io/github/issues/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/issues)
 
-# Microsoft Azure File Storage Filesystem Driver for Laravel 5
+# Microsoft Azure File Storage Filesystem Driver for Laravel 5 and 6
 
 This package allows Microsoft Azure File Storage
-to be used as a filesystem in laravel 5.
+to be used as a filesystem in laravel 5 and 6.
 
 ## Installation
 
@@ -55,6 +55,7 @@ Add the following to your `config/filesystems.php`:
             // Optional settings
             'disableRecursiveDelete' => false,
             'driverOptions' => [],
+            'root' => 'root/directory', // Without leading '/'
         ],
     ],
 ];
