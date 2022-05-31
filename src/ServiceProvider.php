@@ -6,10 +6,10 @@ namespace Academe\Laravel\AzureFileStorageDriver;
  * laravel Service Provider.
  */
 
-use Storage;
 use League\Flysystem\Filesystem;
-
+use Illuminate\Filesystem\FilesystemAdapter;
 use Consilience\Flysystem\Azure\AzureFileAdapter;
+use Illuminate\Support\Facades\Storage;
 use MicrosoftAzure\Storage\File\FileRestProxy;
 use Illuminate\Support\ServiceProvider as AbstractServiceProvider;
 
@@ -22,7 +22,7 @@ class ServiceProvider extends AbstractServiceProvider
 
     /**
      * Bootstrap the application services.
-     * Extend the storage filesystem withe the new driver.
+     * Extend the storage filesystem with the new driver.
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class ServiceProvider extends AbstractServiceProvider
                 [] // $optionsWithMiddlewares
             );
 
-            $directoryPrefix = null;
+            $directoryPrefix = '';
 
             if (! empty($config['driverOptions'])) {
                 // If a string, then treat it like a prefix for legacy support.
@@ -64,21 +64,18 @@ class ServiceProvider extends AbstractServiceProvider
                 $directoryPrefix = $config['root'];
             }
 
-            return new Filesystem(
-                new AzureFileAdapter(
-                    $fileService,
-                    $driverConfig,
-                    $directoryPrefix
-                )
+            $adapter = new AzureFileAdapter(
+                $fileService,
+                $config['fileShareName'],
+                $driverConfig,
+                $directoryPrefix,
+            );
+
+            return new FilesystemAdapter(
+                new Filesystem($adapter, $config),
+                $adapter,
+                $config,
             );
         });
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
-        // No services to register.
     }
 }
