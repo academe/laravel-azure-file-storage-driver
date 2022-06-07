@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/blob/master/LICENCE)
 [![GitHub issues](https://img.shields.io/github/issues/academe/laravel-azure-file-storage-driver.svg)](https://github.com/academe/laravel-azure-file-storage-driver/issues)
 
-# Microsoft Azure File Storage Filesystem Driver for Laravel 5 and 6
+# Microsoft Azure File Storage Filesystem Driver for Laravel 6. 7 and 9
 
 This package allows Microsoft Azure File Storage
 to be used as a filesystem in laravel 5 and 6.
@@ -14,19 +14,6 @@ to be used as a filesystem in laravel 5 and 6.
 
     composer require academe/laravel-azure-file-storage-driver
 
-## Usage
-
-If you're on Laravel 5.4 or earlier, add the service provider in your `config/app.php`:
-
-```php
-'providers' => [
-    ...
-    Academe\Laravel\AzureFileStorageDriver\ServiceProvider::class,
-    ...
-],
-```
-
-For Laravel 5.5+ this step is not necessary.
 This package just extends the filesystem driver, and provides no additional services.
 
 ## Configuration
